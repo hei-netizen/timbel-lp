@@ -132,6 +132,7 @@ h1,h2,h3,h4{font-family:var(--mont);font-weight:800;line-height:1.08;letter-spac
 .field label,.field .lbl{display:block;font-size:0.78rem;font-weight:700;margin-bottom:4px}
 .field .req{color:var(--orange-deep)}
 .field .inp{display:flex;align-items:center;border:1.5px solid var(--line);border-radius:12px;background:var(--sand);overflow:hidden}
+.field .opt-lbl{font-weight:400;color:var(--muted,#6b6b6b)}
 .field .inp:focus-within{border-color:var(--clay);background:#fff}
 .field .flag{padding:0 10px;font-size:1.05rem;border-right:1px solid var(--line);align-self:stretch;display:flex;align-items:center}
 .field input{flex:1;width:100%;padding:11px 13px;border:0;background:transparent;font-family:var(--mont);font-size:0.95rem;color:var(--ink)}
@@ -368,6 +369,10 @@ fbq('track','PageView');
             <div class="field">
               <label for="a-navn">Kontaktperson <span class="req">*</span></label>
               <div class="inp"><input type="text" id="a-navn" name="full_name" placeholder="Fullt navn" autocomplete="name" maxlength="120" required></div>
+            </div>
+            <div class="field">
+              <label for="a-kurs">Ca. hva bruker bedriften p&aring; kurs i &aring;ret? <span class="opt-lbl">(valgfritt)</span></label>
+              <div class="inp"><input type="text" id="a-kurs" name="kursbudsjett" placeholder="F.eks. 50 000 kr" inputmode="numeric" maxlength="60"></div>
             </div>
             <div class="field2">
               <div class="field">
@@ -661,7 +666,7 @@ document.getElementById('leadForm').addEventListener('submit',function(e){
   if(!f.bedrift.value.trim()||!f.full_name.value.trim()||!f.email.value.trim()||!f.phone.value.trim()||!f.email.checkValidity()){f.reportValidity();return;}
   var btn=document.getElementById('leadBtn'); btn.disabled=true; btn.style.opacity='.7';
   var params=new URLSearchParams(window.location.search);
-  var data={bedrift:f.bedrift.value.trim(),ansatte:f.ansatte.value,full_name:f.full_name.value.trim(),
+  var data={bedrift:f.bedrift.value.trim(),ansatte:f.ansatte.value,kursbudsjett:f.kursbudsjett.value.trim(),full_name:f.full_name.value.trim(),
     phone:tbNormTlf(f.phone.value),email:f.email.value.trim(),
     tjeneste:'Pristilbud kursbibliotek',kilde:'timbel-lp',
     side_url:window.location.href,gclid:params.get('gclid')||'',fbclid:params.get('fbclid')||''};
