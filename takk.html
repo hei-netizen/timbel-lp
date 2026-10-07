@@ -29,7 +29,7 @@ ol li span{flex:none;width:26px;height:26px;border-radius:50%;background:var(--c
 .mail{margin-top:16px;font-size:0.85rem;color:var(--muted)}
 .mail a{color:var(--clay);font-weight:700}
 </style>
-<!-- Meta Pixel (Timbel, 4554330334786026) -->
+<!-- Meta Pixel (Timbel, 4554330334786026) + (Timbel Annonser, 1117856044076359) — begge får samme hendelser; ny pixel lagt til 07.10 fordi den gamle ikke kan deles med ny annonsekonto -->
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
@@ -37,10 +37,12 @@ n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
 document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','4554330334786026');
+fbq('init','1117856044076359');
 fbq('track','PageView');
 try{if(sessionStorage.getItem('tb_lead_done')==='1'&&!sessionStorage.getItem('tb_lead_tracked')){fbq('track','Lead');sessionStorage.setItem('tb_lead_tracked','1');}}catch(e){}
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=4554330334786026&ev=PageView&noscript=1"/></noscript>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1117856044076359&ev=PageView&noscript=1"/></noscript>
 </head>
 <body>
   <img class="logo" src="img/timbel-logo.svg" alt="Timbel">
